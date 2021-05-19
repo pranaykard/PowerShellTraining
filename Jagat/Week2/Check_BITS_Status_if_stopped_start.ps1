@@ -1,7 +1,7 @@
 ﻿#Description: This script will check a service status and if stopped, it will start the service. for example BITS
 
-#Gather all the service names
-$service_name= (Get-Service).Name
+# Mention the service service name
+$service_name= 'BITS'
 
 # Code to check status and start if it's in stopped state
 if ($service_name -eq 'BITS')
@@ -25,7 +25,7 @@ if ($service_name -eq 'BITS')
         }
         else
         {
-            Write-Host "Soemthing webt wrong while starting the service. please check in GUI"
+            Write-Warning "Soemthing webt wrong while starting the service. please check in GUI"
         }
         
         
@@ -34,6 +34,6 @@ if ($service_name -eq 'BITS')
 }
 else
 {
-    Write-Host 'Check service name!'
+    Write-Warning 'Check service name!'
     
 }
